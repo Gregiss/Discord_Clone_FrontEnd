@@ -80,6 +80,8 @@ form{
 
 form h1{
     color: #fff;
+    font-weight: normal;
+    padding: 10px;
 }
 
 form input{
