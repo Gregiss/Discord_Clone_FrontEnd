@@ -10,8 +10,8 @@ body{
 }
 
 .bol{
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     background: #000;
     border-radius: 50%;
     position: relative;
