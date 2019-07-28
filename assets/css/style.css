@@ -19,7 +19,7 @@ body{
 
 .logo{
     position: absolute;
-    width: 170px;
+    width: 169px;
     height: 47px;
     background-image: url('../img/logo.svg');
     z-index: 500;
