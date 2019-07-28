@@ -30,6 +30,7 @@ setInterval(function(){
 }, 50);
 
 setInterval(function(){
+    newPositionY = 0;
     $(".canvas").html('<div class="bols"><div class="before"></div></div>');
     newBalls();
 }, 10000);
