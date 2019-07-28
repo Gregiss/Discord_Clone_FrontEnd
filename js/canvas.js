@@ -11,7 +11,7 @@ var colors = [{color: "#5e698a"}, {color: "#2d2f35"}, {color: "#5f698a"}, {color
 
 function newBalls(){
 for(var i = 0; i < 200; i++){
-    var newRandomY = getRandomInt(2000);
+    var newRandomY = getRandomInt(300);
     var newRandomX = getRandomInt(2000);
     var colorInt = getRandomInt(4);
     $(".canvas .bols .before").before("<div class='bol style' style='transform: translate("+newRandomX+"px, "+newRandomY+"px); background-color: "+colors[colorInt].color+";'></div>");
