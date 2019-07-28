@@ -1,6 +1,6 @@
-body{
+body, html{
     background: #2f3136;
-    overflow: hidden;
+    overflow: hidden !important;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -66,7 +66,7 @@ form{
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    width: 480px;
+    width: 400px;
     padding: 40px;
     font-size: 18px;
     color: #72767d;
