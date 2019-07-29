@@ -9,6 +9,10 @@ body, html{
     margin: 0px;
 }
 
+button{
+    outline: none;
+}
+
 .bol{
     width: 15px;
     height: 15px;
