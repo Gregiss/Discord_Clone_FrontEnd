@@ -1,12 +1,27 @@
 body, html{
     background: #2f3136;
     overflow: hidden !important;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 *{
     padding: 0px;
     margin: 0px;
+}
+
+a, abbr, acronym, address, applet, big, blockquote, body, caption, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+a, button, div, input, select, span, strong, textarea {
+    outline: 0;
 }
 
 button{
@@ -228,4 +243,167 @@ form button:hover{
     left: 50%;
     transform: translate(-50%, -50%) scale(0.6);
     color: #fff;
+}
+
+.app{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #36393f;
+}
+
+.app .left_bar{
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 72px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    position: relative;
+    contain: layout;
+    border-radius: 5px 0 0 5px;
+    background-color: #202225;
+    height: 100%;
+}
+
+.app .friends{
+    background-color: #2f3136;
+    position: fixed;
+    width: 240px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: flex;
+    outline: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-rendering: optimizeLegibility;
+    left: 72px;
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.app .friends .search{
+    position: relative;
+    width: 100%;
+    height: 28px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #202225;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #b9bbbe;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.app .friends .search span{
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    height: 20px;
+    padding: 0 4px;
+}
+
+::placeholder, body, button, input, select, textarea {
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-track {
+    border-width: initial;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+        visibility: hidden;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb {
+    background-color: #202225;
+    border-color: transparent;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: move;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(32,34,37,.6);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(32,34,37,.6);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner,::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-corner:hover,::-webkit-scrollbar-corner:hover {
+    background-color: rgba(32,34,37,.6);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }

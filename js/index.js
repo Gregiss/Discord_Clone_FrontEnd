@@ -11,11 +11,28 @@ const newFrase = getRandomInt(frases.length);
 
 const splashFull = "<div class='splashFull'><video src='assets/splash.webm' loop autoplay></video><span id='frase'>"+frases[newFrase].frase+"</span></div>"
 
+let logged = false;
 
 $(document).ready(function(){
+    if(logged){
+        splashLoading();
+    } else{
     $("#account").html(login);
     clickPage();
+    }
 });
+
+const app = "<div class='app'> <div class='before'></div>  </div>";
+const left_bar = "<div class='left_bar'><div class='before'></div></div>"
+const friends_html = "<div class='friends'><div class='po'></div></div>";
+const search_bar = "<div class='search'><span>Search friends</div>";
+
+function startApp(){
+    $("#app").html(app);
+    $(".app .before").before(left_bar);
+    $(".app .before").before(friends_html);
+    $(".app .friends .po").before(search_bar);
+}
 
 function changePage(where){
     if(where == "Register"){
@@ -39,6 +56,9 @@ function splashLoading(){
     $("#app .before").before(splash);
     setTimeout(function(){
         $("#app").html(splashFull);
+        setTimeout(function(){
+            startApp();
+        }, 2000);
     }, 3000);
 }
 
