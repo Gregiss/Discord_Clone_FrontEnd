@@ -14,8 +14,8 @@ button{
 }
 
 .bol{
-    width: 15px;
-    height: 15px;
+    width: 5px;
+    height: 5px;
     background: #000;
     border-radius: 50%;
     position: relative;
@@ -183,7 +183,7 @@ form button:hover{
     height: 0%;
     top: 0px;
     left: 0px;
-    background: #677bc4;
+    background: #36393f;
     z-index: 1000;
     border-radius: 30%;
     transform: scale(2.1);
@@ -209,7 +209,7 @@ form button:hover{
     height: 100%;
     top: 0px;
     left: 0px;
-    background: #677bc4;
+    background: #36393f;
     z-index: 1000;
     border-radius: 82% 18% 97% 3% / 0% 88% 12% 100%;
     transform: scale(2.1);
