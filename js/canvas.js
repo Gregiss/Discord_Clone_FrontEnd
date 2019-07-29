@@ -26,7 +26,6 @@ setInterval(function(){
     }
     newPositionY++;
     $(".canvas .bols").css("transform", "translateY(-"+newPositionY+"px)");
-    console.log(newPositionY);
 }, 50);
 
 setInterval(function(){
