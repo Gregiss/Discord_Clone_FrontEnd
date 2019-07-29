@@ -89,7 +89,7 @@ form{
 
 @-webkit-keyframes down {
     0%   {transform: translate(-50%, -50%);}
-  }
+}
 
 form h1{
     color: #fff;
@@ -175,4 +175,42 @@ form button:hover{
 #need{
     position: relative;
     top: 20px;
+}
+
+#splash{
+    position: fixed;
+    width: 0%;
+    height: 0%;
+    top: 0px;
+    left: 0px;
+    background: #677bc4;
+    z-index: 1000;
+    border-radius: 30%;
+    transform: scale(2.1);
+    -webkit-animation-name: zoom; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards;
+    animation-name: zoom;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes zoom {
+    0%   {width: 0%; height: 00%;}
+    20%   {width: 20%; height: 20%;}
+    40%   {width: 40%; height: 40%;}
+    70%   {width: 85%; height: 85%;}
+    90%   {width: 90%; height: 90%;}
+    100%   {width: 100%; height: 100%;}
+}
+
+.splashFull{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #677bc4;
+    z-index: 1000;
+    border-radius: 82% 18% 97% 3% / 0% 88% 12% 100%;
+    transform: scale(2.1);
 }
