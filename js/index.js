@@ -5,7 +5,11 @@ let register = "<form action=''> <h1 style='font-size: 30px;'>Create an account<
 //Splash
 let splash = "<div id='splash'></div>";
 
-let splashFull = "<div class='splashFull'></div>"
+let frases = [{frase: "Be and honor the person you are. 🍃✨"}, {frase: "Well I want, well I do, I want you, peace I bring you. 🌻✌"}, {frase: "For those who feel little, I’m sorry. 💥"}, {frase: "Learn to flourish in the adversities of life. 🌺🍃"}, {frase : "Make every moment of your life worthwhile. 🍃✨"}]
+
+var newFrase = getRandomInt(frases.length);
+
+let splashFull = "<div class='splashFull'><video src='assets/splash.webm' loop autoplay></video><span id='frase'>"+frases[newFrase].frase+"</span></div>"
 
 
 $(document).ready(function(){

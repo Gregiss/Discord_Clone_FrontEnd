@@ -68,7 +68,7 @@ form{
     background: #000;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     z-index: 100;
     width: 400px;
     padding: 40px;
@@ -88,7 +88,7 @@ form{
 }
 
 @-webkit-keyframes down {
-    0%   {transform: translate(-50%, -50%);}
+    0%   {transform: translate(-50%, -60%);}
 }
 
 form h1{
@@ -188,10 +188,10 @@ form button:hover{
     border-radius: 30%;
     transform: scale(2.1);
     -webkit-animation-name: zoom; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
     -webkit-animation-fill-mode: forwards;
     animation-name: zoom;
-    animation-duration: 1s;
+    animation-duration: 3s;
 }
 
 @-webkit-keyframes zoom {
@@ -213,4 +213,19 @@ form button:hover{
     z-index: 1000;
     border-radius: 82% 18% 97% 3% / 0% 88% 12% 100%;
     transform: scale(2.1);
+}
+
+.splashFull video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+}
+
+.splashFull span{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    color: #fff;
 }
