@@ -1,6 +1,6 @@
 const icon_friend = "<i class='fas fa-user-friends'></i>";
 const line = "<div class='line'></div>";
-const friends_icon = "<div class='icon friends_icon icon_acess'>"+icon_friend+"</div><div class='serves'>"+line+"<div class='before'></div></div>";
+const friends_icon = "<div class='icon friends_icon icon_acess' data-id='-1'>"+icon_friend+"</div><div class='serves'>"+line+"<div class='before'></div></div>";
 const app = "<div class='app'> <div class='before'></div>  </div>";
 const left_bar = "<div class='left_bar'><div class='before'></div></div>"
 const friends_html = "<div class='friends'><div class='po'></div></div>";
@@ -14,6 +14,7 @@ function newServer(name, photo){
     var id = servers.length - 1;
     showServer(name, photo, id);
     acessServer();
+    document.title = "Friends";
 }
 
 
@@ -40,7 +41,11 @@ function acessServer(){
         $(".photo").removeClass("photo_a");
         $("#server" + id).addClass("photo_a");
         $(this).addClass("icon_acess");
-        document.title = "" +servers[id].name;
+        if(id == -1){
+            document.title = "Friends";
+        } else{
+            document.title = "" +servers[id].name;
+        }
     });
 
     $(".app .left_bar .icon").mouseover(function(){
