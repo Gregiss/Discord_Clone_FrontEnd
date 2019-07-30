@@ -23,19 +23,6 @@ $(document).ready(function(){
     }
 });
 
-const app = "<div class='app'> <div class='before'></div>  </div>";
-const left_bar = "<div class='left_bar'><div class='before'></div></div>"
-const friends_html = "<div class='friends'><div class='po'></div></div>";
-const search_bar = "<div class='search'><span>Search friends</div>";
-let registerbar = false;
-
-function startApp(){
-    $("#app").html(app);
-    $(".app .before").before(left_bar);
-    $(".app .before").before(friends_html);
-    $(".app .friends .po").before(search_bar);
-}
-
 function changePage(where){
     if(where == "Register"){
         $("#account").html(register);
@@ -125,6 +112,9 @@ function validateForm(){
     }
     
 }
+
+let registerbar = false;
+
 
 function splashLoading(){
     $("#app .before").before(splash);
