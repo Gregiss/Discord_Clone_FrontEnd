@@ -110,6 +110,7 @@ form h1{
     color: #fff;
     font-weight: normal;
     padding: 10px;
+    font-size: 30px;
 }
 
 form input{
@@ -128,7 +129,7 @@ form input{
     -webkit-transition: background-color .15s ease,border .15s ease;
     transition: background-color .15s ease,border .15s ease;
     outline: none;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 form span{
@@ -136,7 +137,7 @@ form span{
     float: left;
     left: 0px;
     position: relative;
-    top: 20px;
+    top: 30px;
     font-size: 15px;
 }
 
@@ -406,4 +407,24 @@ form button:hover{
 ::-webkit-scrollbar, ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
+}
+
+form .error{
+    position: relative;
+    top: 89px;
+    float: left;
+    left: 102px;
+    color: #da7272;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+}
+
+form .error span{
+    position: absolute;
+    float: left;
+    left: 0px;
+    top: 0px !important;
+    width: 100%;
+    color: #da7272;
 }
