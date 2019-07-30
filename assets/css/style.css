@@ -4,6 +4,21 @@ body, html{
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+:root{
+    --foreground-1: #fff;
+    --foreground-2: #dcddde;
+    --foreground-3: #b9bbbe;
+    --foreground-effect-1: #72767d;
+    --foreground-effect-2: #4f545c;
+    --background-1: #36393f;
+    --background-2: #2f3136;
+    --background-3: #202225;
+    --background-effect-1: #40444b;
+    --background-effect-2: #292b2f;
+    --muted-channels: #4f545c;
+    --dividers: #292b2f;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -294,7 +309,7 @@ form button:hover{
     flex-direction: column;
     text-rendering: optimizeLegibility;
     left: 72px;
-    height: 100%;
+    height: calc(100% - 59px);
     padding: 10px;
     overflow: auto;
 }
@@ -534,4 +549,73 @@ form .error span{
     height: 100%;
     overflow: scroll;
     width: 70px;
+}
+
+.app .me{
+    position: fixed;
+    width: 260px;
+    height: 59px;
+    bottom: 0px;
+    left: 72px;
+    background: #2b2c31;
+    z-index: 200;
+}
+
+.btn_a{
+    color: #8e9297;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: 1.25em;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 1px 0;
+    height: 44px;
+    text-decoration: none;
+    margin-top: 0px;
+    padding: 20px;
+    top: 20px;
+    border-radius: 5px;
+}
+
+.btn_a span{
+    margin-left: 5px;
+    position: relative;
+    top: -20px;
+}
+
+.btn_a svg{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: -10px;
+}
+
+.btn_a:hover{
+    color: #fff !important;
+}
+
+.acess_true{
+    background: #42464d;
+    color: #fff;
+}
+
+.direct{
+    font-size: 12px;
+    color: #fff;
+    opacity: .3;
+    text-transform: uppercase;
+    font-weight: 500;
+    -webkit-transition: opacity .15s ease;
+    transition: opacity .15s ease;
+    padding: 9px 20px;
+    display: block;
+    cursor: default;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 12px;
+    position: relative;
+    top: 30px;
 }
