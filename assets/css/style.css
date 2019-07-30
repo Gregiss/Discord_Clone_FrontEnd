@@ -619,3 +619,22 @@ form .error span{
     position: relative;
     top: 30px;
 }
+
+.my_friends{
+    background-color: #2f3136;
+    position: fixed;
+    width: 240px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: flex;
+    outline: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-rendering: optimizeLegibility;
+    left: 72px;
+    height: calc(100% - 59px);
+    padding: 10px;
+    overflow: auto;
+}

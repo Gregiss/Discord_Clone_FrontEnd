@@ -41,16 +41,15 @@ function startApp(){
     $("#app").html(app);
     $(".app .before").before(left_bar);
     $(".app .before").before(me);
-    acessFriends();
     $(".app .left_bar .before").before(friends_icon);
-    for(var i = 0; i < 9; i++){
-    newServer("Server " + i, "https://cdn.discordapp.com/icons/574382397035118624/c28fafc7d19c4448ec1c9256e102eaa0.png?size=128");
-    }
+    newServer("Teste", "https://cdn.discordapp.com/icons/574382397035118624/c28fafc7d19c4448ec1c9256e102eaa0.png?size=128");
+    $(".app .before").before("<div class='my_friends'><div class='ota'></div></div>");
+    acessFriends();
     acessServer();
 }
 
 function acessFriends(){
-    $(".app .before").before(friends_html);
+    $(".app .my_friends .ota").html(friends_html);
     $(".app .friends .po").before(search_bar);
     $(".app .friends .po").before(links_friends);
     $(".app .friends .po").before(direct_msg);
@@ -77,9 +76,10 @@ function acessServer(){
         $(this).addClass("icon_acess");
         if(id == -1){
             document.title = "Friends";
-            acess_btn_a();
+            acessFriends();
         } else{
             document.title = "" +servers[id].name;
+            $(".app .my_friends").html("<div class='ota'></div>");
         }
     });
 
