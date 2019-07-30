@@ -262,7 +262,7 @@ form button:hover{
 }
 
 .app .left_bar{
-    overflow: hidden;
+    overflow: scroll;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -439,6 +439,7 @@ form .error span{
     border-radius: 50%;
     cursor: pointer;
     transition: 0.5s ease;
+    display: block;
 }
 
 .app .icon_active{
@@ -525,4 +526,12 @@ form .error span{
     height: 100%;
     border-radius: 50%;
     transition: 1s;
+}
+
+.serves{
+    position: fixed;
+    top: 69px;
+    height: 100%;
+    overflow: scroll;
+    width: 70px;
 }
