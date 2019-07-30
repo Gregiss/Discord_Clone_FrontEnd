@@ -18,6 +18,7 @@ $(document).ready(function(){
         splashLoading();
     } else{
     $("#account").html(login);
+    submitForm();
     clickPage();
     }
 });
@@ -47,11 +48,11 @@ function changePage(where){
 }
 
 function clickPage(){
-    submitForm();
     $("form #need").click(function(){
         $("form").addClass("active_form");
         var where = $(this).html();
         changePage(where);
+        submitForm();
     });
 }
 
@@ -93,12 +94,36 @@ function validateForm(){
                 $("#error_repassword").html("");
                 splashLoading();
             } else{
-                error = "Passwords do not match";
-                $("#error_repassword").html(error);
+                error = "Not match";
+                $("#error_email").html("");
+                $("#error_password").html("");
+                $("#error_repassword").html("<span>"+error+"</span>");
             }
         }
+    } else{
+        $("#email").before("<div class='error' id='error_email'>"+error+"</div>");
+        $("#password").before("<div class='error' id='error_password'>"+error+"</div>");
+        if(email == "" && password == ""){
+            error = "Fill in the fields";
+            $("#error_email").html("<span>"+error+"</span>");
+            $("#error_password").html("<span>"+error+"</span>");
+        }
+        else if(email == ""){
+            error = "Fill in the field";
+            $("#error_email").html("<span>"+error+"</span>");
+            $("#error_password").html("");
+            $("#error_email").html("<span>"+error+"</span>");
+        } else if(password == ""){
+            error = "Fill in the field";
+            $("#error_email").html("");
+            $("#error_password").html("<span>"+error+"</span>");
+        } else{
+            splashLoading();
+            $("#error_email").html("");
+            $("#error_password").html("");
+        }
     }
-    console.log(error);
+    
 }
 
 function splashLoading(){
