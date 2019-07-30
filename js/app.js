@@ -23,6 +23,7 @@ function startApp(){
     $(".app .friends .po").before(search_bar);
     $(".app .left_bar .before").before(friends_icon);
     newServer("Teste", "https://cdn.discordapp.com/icons/601259152353787905/9425b887d117585171cccdce2f6282cd.png?size=128");
+    newServer("Teste", "https://cdn.discordapp.com/icons/574382397035118624/c28fafc7d19c4448ec1c9256e102eaa0.png?size=128");
     acessServer();
 }
 

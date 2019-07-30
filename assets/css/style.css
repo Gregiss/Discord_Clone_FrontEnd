@@ -497,8 +497,9 @@ form .error span{
 }
 
 .server{
-    margin-top: 30px !important;
+    top: 10px !important;
     background: transparent !important;
+    margin-top: 5px;
 }
 
 .server::after{
