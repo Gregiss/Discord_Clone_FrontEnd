@@ -262,7 +262,7 @@ form button:hover{
 }
 
 .app .left_bar{
-    overflow: scroll;
+    overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
