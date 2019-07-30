@@ -1,5 +1,5 @@
 const icon_friend = "<i class='fas fa-user-friends'></i>";
-const friends_icon = "<div class='icon friends_icon'>"+icon_friend+"</div>";
+const friends_icon = "<div class='icon friends_icon icon_acess'>"+icon_friend+"</div>";
 const app = "<div class='app'> <div class='before'></div>  </div>";
 const left_bar = "<div class='left_bar'><div class='before'></div></div>"
 const friends_html = "<div class='friends'><div class='po'></div></div>";
