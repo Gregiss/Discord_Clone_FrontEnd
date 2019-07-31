@@ -168,7 +168,7 @@ function detectScreen(){
         if(!(heightAtual == heightt) && !(widthAtual == widtht)){
             return false;
         } else{
-            if(widthAtual <= 450){
+            if(widthAtual <= 510){
             adaptar(heightAtual, widthAtual);
             } else{
                 adaptarDesktop();
