@@ -648,7 +648,7 @@ form .error span{
     background: transparent;
     list-style: none;
     position: relative;
-    left: -13px;
+    left: -7px;
     border-radius: 5px;
 }
 
@@ -688,6 +688,9 @@ form .error span{
     top: 34px;
     position: relative;
     left: 18px;
+    height: calc(100% - 300px);
+    overflow:  scroll;
+    width: 100%;
 }
 
 .app .center{
