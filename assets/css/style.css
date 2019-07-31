@@ -311,7 +311,8 @@ form button:hover{
     left: 72px;
     height: calc(100% - 59px);
     padding: 10px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .app .friends .search{
@@ -636,7 +637,8 @@ form .error span{
     left: 72px;
     height: calc(100% - 59px);
     padding: 10px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .msg{
