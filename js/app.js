@@ -19,6 +19,12 @@ icon.push({ìcon : '<svg class="buttonIcon-onTTxP" name="Nova_Headset" aria-hidd
 icon.push({icon : '<svg class="buttonIcon-onTTxP" name="Gear" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M19.738 10H22V14H19.739C19.498 14.931 19.1 15.798 18.565 16.564L20 18L18 20L16.565 18.564C15.797 19.099 14.932 19.498 14 19.738V22H10V19.738C9.069 19.498 8.203 19.099 7.436 18.564L6 20L4 18L5.436 16.564C4.901 15.799 4.502 14.932 4.262 14H2V10H4.262C4.502 9.068 4.9 8.202 5.436 7.436L4 6L6 4L7.436 5.436C8.202 4.9 9.068 4.502 10 4.262V2H14V4.261C14.932 4.502 15.797 4.9 16.565 5.435L18 3.999L20 5.999L18.564 7.436C19.099 8.202 19.498 9.069 19.738 10ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path></svg>'});
 var servers = [];
 
+var users_discord = [];
+
+function getRandomInt(o){
+    return Math.floor(Math.random()*Math.floor(o));
+}
+
 function newServer(name, photo){
     var server = {name: name, photo: photo};
     servers.push(server);
@@ -26,6 +32,11 @@ function newServer(name, photo){
     showServer(name, photo, id);
     acessServer();
     document.title = "Friends";
+    for(var i = 0; i < 20; i++){
+        var randomPhoto = getRandomInt(4);
+        var newDirect = {name: "User " + i, avatar: "/assets/img/avatar/avatar"+ randomPhoto+".png"};
+        users_discord.push(newDirect);
+    }
 }
 
 const icon_atividade = '<svg name="Activity" class="linkButtonIcon-Mlm5d6" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path fill="currentColor" d="M5.79335761,5 L18.2066424,5 C19.7805584,5 21.0868816,6.21634264 21.1990185,7.78625885 L21.8575059,17.0050826 C21.9307825,18.0309548 21.1585512,18.9219909 20.132679,18.9952675 C20.088523,18.9984215 20.0442685,19 20,19 C18.8245863,19 17.8000084,18.2000338 17.5149287,17.059715 L17,15 L7,15 L6.48507125,17.059715 C6.19999155,18.2000338 5.1754137,19 4,19 C2.97151413,19 2.13776159,18.1662475 2.13776159,17.1377616 C2.13776159,17.0934931 2.1393401,17.0492386 2.1424941,17.0050826 L2.80098151,7.78625885 C2.91311838,6.21634264 4.21944161,5 5.79335761,5 Z M14.5,10 C15.3284271,10 16,9.32842712 16,8.5 C16,7.67157288 15.3284271,7 14.5,7 C13.6715729,7 13,7.67157288 13,8.5 C13,9.32842712 13.6715729,10 14.5,10 Z M18.5,13 C19.3284271,13 20,12.3284271 20,11.5 C20,10.6715729 19.3284271,10 18.5,10 C17.6715729,10 17,10.6715729 17,11.5 C17,12.3284271 17.6715729,13 18.5,13 Z M6,9 L4,9 L4,11 L6,11 L6,13 L8,13 L8,11 L10,11 L10,9 L8,9 L8,7 L6,7 L6,9 Z"></path><rect width="24" height="24"></rect></g></svg>';
@@ -35,7 +46,7 @@ const icon_friends = '<svg name="PersonWaving" class="linkButtonIcon-Mlm5d6" ari
 
 
 const links_friends = "<a class='btn_a'>"+icon_atividade+" <span>Activity</span></a> <a class='btn_a'>"+icon_library+" <span>Library</span</a> <a class='btn_a'>"+icon_nitro+" <span>Nitro</span></a> <a class='btn_a'>"+icon_friends+" <span>Friends</span></a>";
-const direct_msg = "<p class='direct'>Direct messages</p> <div class='msg_direct'></div>";
+const direct_msg = "<p class='direct'>Direct messages</p> <div class='msg_direct'><div class='after'></div></div>";
 
 function startApp(){
     $("#app").html(app);
@@ -54,6 +65,23 @@ function acessFriends(){
     $(".app .friends .po").before(links_friends);
     $(".app .friends .po").before(direct_msg);
     acess_btn_a();
+    showDirectMsg();
+}
+
+function showDirectMsg(){
+    for(var i = 0; i < users_discord.length; i++){
+        $(".msg_direct .after").after("<li class='msg' data-id='"+i+"'><div class='avatar'><img src='"+users_discord[i].avatar+"'></img></div><span>"+users_discord[i].name+"</span></div></li>");
+    }
+    acessMsg();
+}
+
+function acessMsg(){
+    $(".msg").click(function(){
+        let id = $(this).data("id");
+        $(".msg").removeClass("msg_active");
+        $(this).addClass("msg_active");
+        document.title = "" +users_discord[id].name;
+    });
 }
 
 function acess_btn_a(){
@@ -90,7 +118,7 @@ function acessServer(){
 
     $(".app .left_bar .icon").mouseout(function(){
         var id = $(this).data("id");
-        $(this).removeClass("photo_a");
+        $("#server" + id).removeClass("photo_a");
         $(this).removeClass("icon_active");
     });
 

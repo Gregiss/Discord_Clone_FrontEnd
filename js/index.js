@@ -11,7 +11,7 @@ const newFrase = getRandomInt(frases.length);
 
 const splashFull = "<div class='splashFull'><video src='assets/splash.webm' loop autoplay></video><span id='frase'>"+frases[newFrase].frase+"</span></div>"
 
-let logged = false;
+let logged = true;
 
 $(document).ready(function(){
     if(logged){
