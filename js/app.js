@@ -170,12 +170,35 @@ function detectScreen(){
         } else{
             if(widthAtual <= 450){
             adaptar(heightAtual, widthAtual);
+            } else{
+                adaptarDesktop();
             }
         }
     }, 1000);
 }
 
 var zoom = false;
+
+function adaptarDesktop(){
+    $(".center h1").click(function(){
+        $(".center").removeClass("zomob");
+        return false;
+    });
+    $(".friends_icon").click(function(){
+        $(".center").removeClass("zomob");
+        return false;
+    });
+    $(".friends").css("width", "240px");
+    $(".app .friends .search").css("width", "240px");
+    $(".my_friends").css("width", "240px");
+    $(".friends").css("width", "240px");
+    $(".over").css("width", "240px");
+    $(".search").css("width", "240px");
+    $(".me").css("width", "260px");
+    $(".center").css("width", "calc(100% - 320px)");
+    $(".center").removeClass("zomob");
+    $(".center h1").css("left", "20px");
+}
 
 function adaptar(height, width){
     $(".friends").css("width", "183px");
