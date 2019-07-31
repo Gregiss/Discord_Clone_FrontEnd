@@ -694,12 +694,14 @@ form .error span{
 }
 
 .app .center{
-    width: calc(100% - 312px);
+    width: calc(100% - 320px);
     height: 100%;
     position: fixed;
     float: right;
     right: 0px;
-    background: #00000000;
+    background: #36393f;
+    transition: 1s;
+    z-index: 1000;
 }
 
 .app .center h1{
@@ -709,6 +711,7 @@ form .error span{
     font-size: 22px;
     top: 0px;
     left: 20px;
+    cursor: pointer;
 }
 
 .app .center h1::after{
@@ -749,4 +752,8 @@ form .error span{
     z-index: 100;
     padding-bottom: 19px;
     top: -4px;
+}
+
+.zomob{
+    width: calc(100% - 70px) !important;
 }

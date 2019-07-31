@@ -60,6 +60,7 @@ function startApp(){
     $(".app .before").before("<div class='my_friends'><div class='ota'></div></div>");
     acessFriends();
     acessServer();
+    detectScreen();
 }
 
 function acessFriends(){
@@ -148,4 +149,55 @@ function acessServer(){
 
 function searchFriends(){
     console.log("WIP");
+}
+
+function detectScreen(){
+    var heightt = $(window).height();   // returns height of browser viewport
+    var heighD = $(document).height(); // returns height of HTML document (same as pageHeight in screenshot)
+    var widthW = $(window).width();   // returns width of browser viewport
+    var widtht = $(document).width(); // returns width of HTML document (same as pageWidth in screenshot)
+    var heightAtual = heightt;
+    var widthAtual = widtht;
+    setInterval(function(){
+        height = $(window).height();   // returns height of browser viewport
+        heighD = $(document).height(); // returns height of HTML document (same as pageHeight in screenshot)
+        widtht = $(window).width();   // returns width of browser viewport
+        widthD = $(document).width(); // returns width of HTML document (same as pageWidth in screenshot)
+        heightAtual = heightt;
+        widthAtual = widtht;
+        if(!(heightAtual == heightt) && !(widthAtual == widtht)){
+            return false;
+        } else{
+            if(widthAtual <= 450){
+            adaptar(heightAtual, widthAtual);
+            }
+        }
+    }, 1000);
+}
+
+var zoom = false;
+
+function adaptar(height, width){
+    $(".friends").css("width", "183px");
+    $(".app .friends .search").css("width", "183px");
+    $(".my_friends").css("width", "183px");
+    $(".friends").css("width", "183px");
+    $(".over").css("width", "183px");
+    $(".search").css("width", "183px");
+    $(".me").css("width", "203px");
+    $(".center").css("width", "calc(100% - 276px)");
+    $(".center h1").css("left", "-1px");
+    $(".center h1").click(function(){
+        if(zoom == false){
+            $(".center").addClass("zomob");
+            zoom = true;
+        } else{
+            $(".center").removeClass("zomob");
+            zoom = false;
+        }
+    });
+    $(".friends_icon").click(function(){
+        $(".center").removeClass("zomob");
+        zoom = false;
+    });
 }
