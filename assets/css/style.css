@@ -707,16 +707,27 @@ form .error span{
     position: relative;
     padding: 22px;
     font-size: 22px;
-    top: -11px;
-    border-bottom: 1px solid #202225;
+    top: 0px;
     left: 20px;
 }
 
-.app .center svg{
+.app .center h1::after{
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 1px;
+    background: #202225;
+    top: 65px;
+    z-index: 100;
+    left: 71px;
+}
+
+.app .center h1 svg{
     height: 26px;
     width: 32px;
     position: relative;
     top: 5px;
+    display: none;
 }
 
 .search::after{
