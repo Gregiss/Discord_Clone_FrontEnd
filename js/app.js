@@ -76,7 +76,14 @@ function acessFriends(){
 function acessFriendsLinks(title, tipo){
     $(".app .center").html("<div class='before'></div>");
     $(".app .center .before").before("<h1>" + title + "</h1>");
-    if(tipo == 0){    
+    if(tipo == 0){ 
+        document.title = "Activity";
+    } else if(tipo == 1){
+        document.title = "Library";
+    } else if(tipo == 2){
+        document.title = "Nitro";
+    } else if(tipo == 3){
+        document.title = "Friends";
     }
 }
 
