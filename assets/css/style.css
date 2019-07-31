@@ -619,7 +619,7 @@ form .error span{
     text-overflow: ellipsis;
     margin-top: 12px;
     position: relative;
-    top: 41px;
+    top: 53px;
 }
 
 .my_friends{
@@ -685,7 +685,7 @@ form .error span{
 }
 
 .app .msg_direct{
-    top: 34px;
+    top: 54px;
     position: relative;
     left: 18px;
     height: calc(100% - 300px);
