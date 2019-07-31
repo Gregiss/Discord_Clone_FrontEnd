@@ -648,6 +648,7 @@ form .error span{
     list-style: none;
     position: relative;
     left: -13px;
+    border-radius: 5px;
 }
 
 .msg_active{
