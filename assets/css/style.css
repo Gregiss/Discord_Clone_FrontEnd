@@ -316,8 +316,8 @@ form button:hover{
 }
 
 .app .friends .search{
-    position: relative;
-    width: 100%;
+    position: fixed;
+    width: 233px;
     height: 28px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -333,6 +333,7 @@ form button:hover{
     color: #b9bbbe;
     padding: 4px;
     cursor: pointer;
+    z-index: 500;
 }
 
 .app .friends .search span{
@@ -576,7 +577,7 @@ form .error span{
     text-decoration: none;
     margin-top: 0px;
     padding: 20px;
-    top: 19px;
+    top: 60px;
     border-radius: 5px;
 }
 
@@ -618,7 +619,7 @@ form .error span{
     text-overflow: ellipsis;
     margin-top: 12px;
     position: relative;
-    top: 30px;
+    top: 41px;
 }
 
 .my_friends{
@@ -658,6 +659,7 @@ form .error span{
 
 .msg_active span{
     color: #fff !important;
+    opacity: 1;
 }
 
 .msg .avatar{
@@ -683,7 +685,54 @@ form .error span{
 }
 
 .app .msg_direct{
-    top: 26px;
+    top: 34px;
     position: relative;
     left: 18px;
+}
+
+.app .center{
+    width: calc(100% - 312px);
+    height: 100%;
+    position: fixed;
+    float: right;
+    right: 0px;
+    background: #00000000;
+}
+
+.app .center h1{
+    color: #fff;
+    position: relative;
+    padding: 22px;
+    font-size: 22px;
+    top: -11px;
+    border-bottom: 1px solid #202225;
+    left: 20px;
+}
+
+.app .center svg{
+    height: 26px;
+    width: 32px;
+    position: relative;
+    top: 5px;
+}
+
+.search::after{
+    content: '';
+    position: fixed;
+    width: 263px;
+    height: 1px;
+    background: #202225;
+    top: 65px;
+    z-index: 100;
+    left: 71px;
+}
+
+.over{
+    position: fixed;
+    width: 236px;
+    background-color: #2f3136;
+    height: 50px;
+    z-index: 100;
+    padding-bottom: 19px;
+    top: -4px;
 }

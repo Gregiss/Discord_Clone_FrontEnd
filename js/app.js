@@ -5,7 +5,9 @@ const app = "<div class='app'> <div class='before'></div>  </div>";
 const left_bar = "<div class='left_bar'><div class='before'></div></div>"
 const me = "<div class='me'></div>"
 const friends_html = "<div class='friends'><div class='po'></div></div>";
-const search_bar = "<div class='search'><span>Search friends</div>";
+const search_bar = "<div class='over'></div><div class='search'><span>Search friends</div>";
+
+var center = "<div class='center'></div>";
 
 const icon = [];
 
@@ -45,7 +47,7 @@ const icon_nitro = '<svg name="NitroWheel" class="linkButtonIcon-Mlm5d6" aria-hi
 const icon_friends = '<svg name="PersonWaving" class="linkButtonIcon-Mlm5d6" aria-hidden="false" width="16" height="16" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path fill="currentColor" fill-rule="nonzero" d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)"></path><path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z"></path></g></svg>';
 
 
-const links_friends = "<a class='btn_a'>"+icon_atividade+" <span>Activity</span></a> <a class='btn_a'>"+icon_library+" <span>Library</span</a> <a class='btn_a'>"+icon_nitro+" <span>Nitro</span></a> <a class='btn_a'>"+icon_friends+" <span>Friends</span></a>";
+const links_friends = "<a class='btn_a acess_true' data-id='0'>"+icon_atividade+" <span>Activity</span></a> <a class='btn_a' data-id='1'>"+icon_library+" <span>Library</span</a> <a class='btn_a' data-id='2'>"+icon_nitro+" <span>Nitro</span></a> <a class='btn_a' data-id='3'>"+icon_friends+" <span>Friends</span></a>";
 const direct_msg = "<p class='direct'>Direct messages</p> <div class='msg_direct'><div class='after'></div></div>";
 
 function startApp(){
@@ -53,6 +55,7 @@ function startApp(){
     $(".app .before").before(left_bar);
     $(".app .before").before(me);
     $(".app .left_bar .before").before(friends_icon);
+    $(".app .before").before(center);
     newServer("Teste", "https://cdn.discordapp.com/icons/574382397035118624/c28fafc7d19c4448ec1c9256e102eaa0.png?size=128");
     $(".app .before").before("<div class='my_friends'><div class='ota'></div></div>");
     acessFriends();
@@ -63,9 +66,18 @@ function acessFriends(){
     $(".app .my_friends .ota").html(friends_html);
     $(".app .friends .po").before(search_bar);
     $(".app .friends .po").before(links_friends);
+    document.title = "Activity";
+    acessFriendsLinks(icon_atividade+"<span>Activity</span>", 0);
     $(".app .friends .po").before(direct_msg);
     acess_btn_a();
     showDirectMsg();
+}
+
+function acessFriendsLinks(title, tipo){
+    $(".app .center").html("<div class='before'></div>");
+    $(".app .center .before").before("<h1>" + title + "</h1>");
+    if(tipo == 0){    
+    }
 }
 
 function showDirectMsg(){
@@ -86,8 +98,11 @@ function acessMsg(){
 
 function acess_btn_a(){
     $(".btn_a").click(function(){
+        var title = $(this).html();
+        var tipo = $(this).data("id");
         $(".btn_a").removeClass("acess_true");
         $(this).addClass("acess_true");
+        acessFriendsLinks(title, tipo);
     });
 }
 
